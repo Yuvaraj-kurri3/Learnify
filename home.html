@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+  <link rel="icon" href="images/logo.jpg" type="image/x-jpg">
+ 
+    <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+       display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+     
+      
+      opacity: 1;
+    }
+
+    .cont {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .box {
+      flex: 1 1 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #f9f9f9;
+      transition: transform 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    select {
+      padding: 10px;
+      width: 100%;
+      font-size: 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      background-color: #fff;
+      cursor: pointer;
+    }
+    select option{
+      cursor: pointer;
+    }
+
+    button {
+      display: flex;
+      flex-direction: row;
+      padding: 15px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #2e8b57;
+      color: white;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #256d45;
+    }
+    header {
+  width: 100%;
+  padding: 15px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  gap: 3.7in;
+}
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #8e2de2, #4a00e0); 
+  padding: 10px 20px;
+}
+
+ 
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 0px;
+ 
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+ 
+
+.nav-links li{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  animation: fadeSlideUp 0.8s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 3;
+    transform: translateY(0);
+  }
+  
+}
+.nav-links li span:hover {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+.nav-links li:hover {
+  background-color: rgba(255, 255, 255, 0.2);}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+.nav-names{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 10px;
+  list-style: none;
+}
+
+@media (max-width: 510px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    gap: 2.3in;
+    align-items: center;
+  }
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    margin-top: 10px;
+    /* border: 2px solid white; */
+    padding: 10px;
+
+  }
+  .new_logo{
+   width: 80px;
+  height: 60px;
+  /* border: 2px solid red; */
+ }
+  nav {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #0b52a9;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: none;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: block;
+    background:linear-gradient(to right,#607a78, #458ca7);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links li {
+    width: 100%;
+    height: 60px;
+    justify-content: flex-start;
+    color: white;
+  }
+
+  .nav-links img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-links span {
+    font-size: 14px;
+  }
+  header{
+    background:linear-gradient(to right,#768a88, #585858);
+    gap: 2.9in;
+ 
+  }
+  #dream,#Growth{
+  color: #17689e;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: bold;
+}
+.cot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 30px;
+   padding: 15px;
+  gap: 10px;
+ 
+}
+
+#h {
+  font-size: 18px;
+}
+.logo{
+  font-size: 23px;
+  color: rgb(0, 255, 191);
+}
+ 
+}
+
+ 
+.nav-links img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#std{
+  color: rgb(220, 200, 255);
+  
+}
+#arrow{
+  display: none;
+}
+#h {
+  font-size: 20px;
+  color: #444;
+  font-weight: 600;
+}
+
+#Growth, #dream {
+  color: #17689e;
+  font-weight: bold;
+  font-style: italic;
+}
+/* color: #17689e; */
+.cot {
+  width: 95%;
+  max-width: 700px;
+  padding: 20px;
+  margin: 40px auto;
+  text-align: center;
+  background: linear-gradient(135deg, #e3f2fd, #e0f7fa);
+  border-left: 6px solid #17689e;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.new_logo{
+   width: 80px;
+  height: 60px;
+  /* border: 2px solid red; */
+  margin-left: 0.2in;
+}
+#new_logo{
+  height: 80px;
+  width:2in;
+}
+footer {
+      text-align: center;
+      padding: 20px;
+      background: #f1f1f1;
+      color: #777;
+     margin-top: 0.3in;
+     display: flex;
+     flex-direction: row;
+     gap: 2in;
+     
+    }
+ span{
+  cursor: pointer;
+ }
+  </style>
+</head>
+<body>
+  <header style="background:linear-gradient(to right,#fdfdfd,#243836);
+">
+    <!-- <h1 class="logo">  <SPAN style="color: linear-gradient(to right, #8e2de2, #4a00e0);  font-style: italic;">LEARNIFY</SPAN></h1> -->
+     <div class="new_logo">
+      <img src="./images/logo9.png" alt="new_logo" id="new_logo">
+     </div>
+
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <nav>
+      <ul class="nav-links" id="nav-links"  >
+        <li><img src="images/yuvaP.png" alt="Yuvaraj" ><span href="./about.html">Yuvaraj Kurri<br><span id="std">Diploma Final Year</span></span></li>
+        <li><img src="images/vivek.jpg" alt="Vivekananda" ><span >Vivekananda Kammari<br><span id="std">Diploma Final Year</span></span></li>
+        <li><img src="images/jagdeeshwar.jpg" alt="Jagdeesh" ><span >Jagdeeshwar Merugu<br><span id="std">Diploma Final Year</span></span></li>
+        <li><img src="images/rahul.jpg" alt="Rahul" ><span >Rahul goud Belli<br><span id="std">Diploma Second Year</span></span></li>
+        <li><img src="images/shashi.jpg" alt="Shashi" ><span >Shashi Nagilla<br><span id="std">Diploma Second Year</span></span></li>
+      </ul>
+    </nav>
+  </div>  
+  </header>
+   <br>
+   <br>
+ <div class="cot">
+  <h3 id="h">Your <span id="Growth">Growth</span> Is <span id="dream">Our</span> Dream</h3>
+ </div>
+  <br>
+  <div class="cont">
+   
+    <div class="box">
+      <form>
+        <label for="scheme">Select Scheme</label>
+        <select name="select" id="scheme">
+        <option value="" disabled selected>Select Scheme</option>
+          <option value="C21">C21</option>
+          <option value="C18">C18</option>
+          <option value="C15">C15</option>
+          <option value="C12">C12</option>
+        </select>
+      </form>
+    </div>
+    
+    <div class="box" style="justify-content: center;display: flex;flex-direction: row;">
+      <button id="btn">Get Report <span id="arrow">➡️</span></button>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 Your TWS. All rights reserved.</p>
+    <p>Total Visitors: <a href="https://www.hitwebcounter.com" target="_blank">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=20525372&style=0007&nbdigits=5&type=page&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a></p>
+<!-- hitwebcounter Code START -->
+          
+  </footer>
+  <script>
+    // visitor counting
+   window.addEventListener("DOMContentLoaded", function() {
+      // Fetch the visitor count from the server or local storage
+      fetch('https://api.countapi.xyz/hit/yuvaraj-kurri3-learnify/visits')
+      .then(response => response.json())
+     .then(data => {
+      document.getElementById('visitor-count').innerText = data.value;
+    });
+    });
+    document.getElementById('btn').addEventListener('click', function() {
+      var scheme = document.getElementById('scheme').value;
+    
+      // Perform AJAX request to fetch report based on selected scheme and branch
+      // Replace the following code with your AJAX implementation
+       if(scheme == "C21") {
+        window.localStorage.setItem("scheme","C21");
+        window.location=`${scheme}.html`;
+      }
+      else if(scheme == "C18" ||scheme == "C15" ||scheme == "C12"){
+         alert("Currently, the C21 Scheme is available");
+      }
+      else{
+        alert("Please select the Scheme");
+      }
+      
+      // Replace "C24.html", "C21.html", "C18.html", "C15.html", and "C12.html" with the actual file names of your report pages for each scheme
+      
+    });
+    document.getElementById('hamburger').addEventListener('click', function () {
+    document.getElementById('nav-links').classList.toggle('active');
+  });
+
+   
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.querySelector("nav");
+
+  hamburger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+  document.getElementById("btn").addEventListener("mouseenter", function() {
+    document.getElementById("arrow").style.display = "block";
+});
+
+document.getElementById("btn").addEventListener("mouseleave", function() {
+    document.getElementById("arrow").style.display = "none";
+});
+function gotoabout(){
+  window.location.href="/about.html";
+}
+  </script>
+</body>
+</html>

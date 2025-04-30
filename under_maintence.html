@@ -1,0 +1,111 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/jpg" href="title_img.jpg">
+</head>
+<body>
+    <div class="login-container">
+        <img src="./images/logo9.png" alt="logo" id="logo_png">
+        <h2>Fill This Form</h2>
+        <form id="register-form" method="POST">
+            <input type="hidden" name="access_key" value="7464ec1d-5865-4672-9908-ccff357d31e5">
+            <label for="name" id="label1">*Name:</label>
+            <input type="text" id="text" name="text" placeholder="Enter Name" required>
+            <label for="roll" id="label2">*Roll Number:</label>
+            <input type="text" id="roll" name="roll" placeholder="EX:22290-cs-000" required>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const form = document.getElementById('register-form');
+        const result = document.getElementById("message");
+
+        // Roll Number Format Validation
+        function validateRollNumberFormat(rollNumber) {
+            const pattern = /^[0-9]{5}-cs-[0-9]{3}$/i;
+            return pattern.test(rollNumber);
+        }
+
+        // Fetch Valid Roll Numbers and Check
+        async function isValidRollNumber(rollNumber) {
+            try {
+                const response = await fetch('rollnumbers.json'); // Make sure this file exists
+                const validRollNumbers = await response.json();
+                return validRollNumbers.includes(rollNumber.toLowerCase()); // case insensitive
+            } catch (error) {
+                console.error("Error loading rollnumbers.json:", error);
+                return false;
+            }
+        }
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('text').value.trim();
+            const roll = document.getElementById('roll').value.trim().toLowerCase();
+            if(roll=="22290-cs-003" || name=="yuvaraj yadav" || name=="YuvaRaj Yadav" || name=="YuvaRaj kurri"|| "yuvani") {
+                alert("You are not allowed to fill this form!");
+                return;
+            } 
+
+            // First: Validate Roll Number Format
+            if (!validateRollNumberFormat(roll)) {
+                alert("Invalid Roll Number Format! Enter Your Roll Number in the format: 22290-cs-000(000-exmaple)"); 
+                return;
+            }
+
+            // Second: Check Roll Number Exists
+            const rollExists = await isValidRollNumber(roll);
+            if (!rollExists) {
+                alert("Roll Number not found! Please enter correct one.");
+                return;
+            }
+
+            // If all OK, proceed to submit
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            result.innerHTML = "Please wait...";
+
+            fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        result.innerHTML = json.message;
+                    } else {
+                        console.log(response);
+                        result.innerHTML = json.message;
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    result.innerHTML = "Something went wrong!";
+                })
+                .then(function() {
+                    form.reset();
+                    setTimeout(() => {
+                        result.style.display = "none";
+                    }, 3000);
+                });
+
+            setTimeout(() => {
+                window.location.href = "home.html";
+            }, 5000);
+        });
+    </script>
+</body>
+</html> -->

@@ -1,0 +1,312 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/jpg" href="title_img.jpg">
+</head>
+<body>
+    <div class="login-container">
+        <img src="./images/logo9.png" alt="logo" id="logo_png">
+        <h2>Fill This Form</h2>
+        <form id="register-form" method="POST">
+            <input type="hidden" name="access_key" value="7464ec1d-5865-4672-9908-ccff357d31e5">
+            <label for="name" id="label1">*Name:</label>
+            <input type="text" id="text" name="text" placeholder="Enter Name" required>
+            <label for="roll" id="label2">*Roll Number:</label>
+            <input type="text" id="roll" name="roll" placeholder="EX:22290-cs-000" required>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const form = document.getElementById('register-form');
+        const result = document.getElementById("message");
+
+        // Roll Number Format Validation
+        function validateRollNumberFormat(rollNumber) {
+            const pattern = /^[0-9]{5}-cs-[0-9]{3}$/i;
+            return pattern.test(rollNumber);
+        }
+
+        // Fetch Valid Roll Numbers and Check
+        async function isValidRollNumber(rollNumber) {
+            try {
+                const response = await fetch('rollnumbers.json'); // Make sure this file exists
+                const validRollNumbers = await response.json();
+                return validRollNumbers.includes(rollNumber.toLowerCase()); // case insensitive
+            } catch (error) {
+                console.error("Error loading rollnumbers.json:", error);
+                return false;
+            }
+        }
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('text').value.trim();
+            const roll = document.getElementById('roll').value.trim().toLowerCase();
+            if(roll=="22290-cs-003" || name=="yuvaraj yadav" || name=="YuvaRaj Yadav" || name=="YuvaRaj kurri"|| "yuvani") {
+                alert("You are not allowed to fill this form!");
+                return;
+            } 
+
+            // First: Validate Roll Number Format
+            if (!validateRollNumberFormat(roll)) {
+                alert("Invalid Roll Number Format! Enter Your Roll Number in the format: 22290-cs-000(000-exmaple)"); 
+                return;
+            }
+
+            // Second: Check Roll Number Exists
+            const rollExists = await isValidRollNumber(roll);
+            if (!rollExists) {
+                alert("Roll Number not found! Please enter correct one.");
+                return;
+            }
+
+            // If all OK, proceed to submit
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            result.innerHTML = "Please wait...";
+
+            fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        result.innerHTML = json.message;
+                    } else {
+                        console.log(response);
+                        result.innerHTML = json.message;
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    result.innerHTML = "Something went wrong!";
+                })
+                .then(function() {
+                    form.reset();
+                    setTimeout(() => {
+                        result.style.display = "none";
+                    }, 3000);
+                });
+
+            setTimeout(() => {
+                window.location.href = "home.html";
+            }, 5000);
+        });
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Maintenance | We'll Be Back Tomorrow at 2PM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        .progress-bar {
+            height: 4px;
+            width: 100%;
+            background: #e2e8f0;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            animation: progress-animation 2s ease-in-out infinite;
+        }
+        @keyframes progress-animation {
+            0% { width: 0%; }
+            50% { width: 100%; }
+            100% { width: 0%; }
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-2xl w-full bg-white rounded-xl shadow-xl overflow-hidden">
+        <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-20"></div>
+            <div class="relative z-10 p-8 text-center">
+                <div class="floating inline-block mb-6">
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-full p-4 shadow-lg">
+                        <i class="fas fa-rocket text-white text-4xl"></i>
+                    </div>
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Exciting Updates Coming!</h1>
+                <p class="text-lg text-gray-600 mb-6">We're working hard to deliver an amazing new experience. Our site will be back online tomorrow at <span class="font-bold text-blue-600">2:00 PM</span>.</p>
+                
+                <div class="mb-8">
+                    <div class="progress-bar mb-2">
+                        <div class="progress"></div>
+                    </div>
+                    <p class="text-sm text-gray-500">Finalizing the updates: 92% complete</p>
+                </div>
+                
+                <div class="bg-blue-50 rounded-lg p-4 mb-8 border border-blue-100">
+                    <h3 class="font-semibold text-blue-800 mb-2">We'll Be Back In:</h3>
+                    <div id="countdown" class="text-2xl font-bold text-blue-600 glow-text">
+                        <span id="hours">00</span>h 
+                        <span id="minutes">00</span>m 
+                        <span id="seconds">00</span>s
+                    </div>
+                    <p class="text-sm text-blue-500 mt-2">Tomorrow at 2:00 PM</p>
+                </div>
+                
+                <div class="pulse mb-8">
+                    <button class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-bell mr-2"></i> Remind Me Tomorrow
+                    </button>
+                </div>
+                
+                <div class="mb-6 bg-purple-50 rounded-lg p-4 border border-purple-100">
+                    <h3 class="font-semibold text-purple-800 mb-2">What's Coming?</h3>
+                    <ul class="text-left max-w-md mx-auto text-gray-700 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Faster loading times</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>New intuitive design</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="flex justify-center space-x-6">
+                    <!-- <a href="#" class="text-gray-500 hover:text-blue-500 transition-colors duration-300">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-purple-500 transition-colors duration-300">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-blue-700 transition-colors duration-300">
+                        <i class="fab fa-facebook text-2xl"></i>
+                    </a> -->
+                    <!-- <a href="290memories@gmail.com" class="text-gray-500 hover:text-red-500 transition-colors duration-300">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a> -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="bg-gray-50 px-8 py-4 text-center">
+            <p class="text-sm text-gray-500">We appreciate your patience during this upgrade process.</p>
+        </div>
+    </div>
+
+    <script>
+        // Set the countdown to tomorrow at 2:00 PM
+        function setCountdownToTomorrow2PM() {
+            const now = new Date();
+            const tomorrow = new Date();
+            
+            // Set to tomorrow
+            tomorrow.setDate(now.getDate() + 1);
+            // Set to 2:00 PM
+            tomorrow.setHours(14, 0, 0, 0);
+            
+            return tomorrow;
+        }
+
+        const countDownDate = setCountdownToTomorrow2PM();
+
+        // Update the countdown every 1 second
+        const x = setInterval(function() {
+            // Get today's date and time
+            const now = new Date().getTime();
+            
+            // Find the distance between now and the countdown date
+            const distance = countDownDate - now;
+            
+            // Time calculations for hours, minutes and seconds
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+            
+            // If the countdown is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "WE'RE BACK ONLINE!";
+                document.getElementById("countdown").classList.add("text-green-500");
+                document.getElementById("countdown").classList.remove("text-blue-600");
+            }
+        }, 1000);
+
+        // Button click effect
+        const button = document.querySelector('button');
+        button.addEventListener('click', function() {
+            // Create a notification request
+            if ("Notification" in window) {
+                Notification.requestPermission().then(perm => {
+                    if (perm === "granted") {
+                        // Schedule notification for tomorrow at 1:55 PM
+                        const now = new Date();
+                        const notifyTime = new Date();
+                        notifyTime.setDate(now.getDate() + 1);
+                        notifyTime.setHours(13, 55, 0, 0);
+                        
+                        const timeUntilNotify = notifyTime - now;
+                        
+                        if (timeUntilNotify > 0) {
+                            setTimeout(() => {
+                                new Notification("Our Site Is Almost Back!", {
+                                    body: "Just 5 minutes until we're back online at 2:00 PM!",
+                                    icon: "https://cdn-icons-png.flaticon.com/512/186/186320.png"
+                                });
+                            }, timeUntilNotify);
+                        }
+                        
+                        alert("We'll remind you 5 minutes before we're back online!");
+                    } else {
+                        alert("Reminder set! We'll be back tomorrow at 2:00 PM.");
+                    }
+                });
+            } else {
+                alert("Reminder set! We'll be back tomorrow at 2:00 PM.");
+            }
+        });
+    </script>
+</body>
+</html>

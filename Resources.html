@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <link rel="icon" href="images/logo.jpg" type="image/x-jpg">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+      
+        }
+        .subjects{
+            margin-top: 0.7in;
+            margin-right: 20px;
+            width: 8in;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 800px;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    thead {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+    }
+
+    th, td {
+      padding: 14px 20px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    th:first-child, td:first-child {
+      width: 14%;
+      border-right: 1px solid black;
+     
+    }
+
+    th:nth-child(2), td:nth-child(2) {
+      width: 30%;
+      border-right: 1px solid black;
+    }
+
+    th:nth-child(3), td:nth-child(3) {
+      width: 50%;
+      border-right: 1px solid black;
+    }
+    th:nth-child(4), td:nth-child(4) {
+      width: 50%;
+      border-right: 1px solid black;
+    
+    }
+    th:nth-child(5), td:nth-child(5) {
+      width: 90%;
+       
+    
+    }
+
+    .resource-link {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .resource-link:hover {
+      text-decoration: underline;
+    }
+    a{
+        text-decoration: none;
+    }
+    @media (max-width: 510px) {
+   .subjects {
+    width: 60%;
+  margin-left: 60px;
+  margin-right: 60px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+table {
+  width: 60%;
+  max-width: 800px;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+thead {
+  background-color: #34495e;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 11px;
+}
+
+tbody tr:hover {
+  background-color: #f9f9f9;
+  transition: 0.3s ease;
+}
+
+th:first-child, td:first-child {
+  width: 15%;
+  border-right: 1px solid #ccc;
+}
+
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4),
+th:nth-child(5), td:nth-child(5) {
+  border-right: 1px solid #ccc;
+}
+
+    }
+    .btn{
+        border: none;
+      
+        font-size: 15px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border-radius: 5px;
+        padding: 3px;
+        cursor: pointer;
+    }
+    .btn:hover{
+      background-color: rgb(111, 219, 109);    }
+    .note{
+      color: red;
+
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: large;
+font-size: 19px;
+    }
+    .subject_name{
+     
+      font-weight: bold;
+      font-style: initial;
+    }
+    #sub_name{
+      color: rgb(115, 118, 26);
+    }
+    header {
+  width: 100%;
+  padding: 15px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  gap: 3.7in;
+}
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #8e2de2, #4a00e0); 
+  padding: 10px 20px;
+}
+
+ 
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 0px;
+ 
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+ 
+
+.nav-links li{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  animation: fadeSlideUp 0.8s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 3;
+    transform: translateY(0);
+  }
+  
+}
+.nav-links li span:hover {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+.nav-links li:hover {
+  background-color: rgba(255, 255, 255, 0.2);}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+.nav-names{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 10px;
+  list-style: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 510px) {
+  .hamburger {
+    display: block;
+    margin-top: 10px;
+    /* border: 2px solid white; */
+    padding: 10px;
+
+  }
+
+  nav {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #0b52a9;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: none;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: block;
+    background:linear-gradient(to right,#607a78, #458ca7);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links li {
+    width: 100%;
+    height: 60px;
+    justify-content: flex-start;
+    color: white;
+  }
+
+  .nav-links img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-links span {
+    font-size: 14px;
+  }
+  header{
+    background:linear-gradient(to right,#768a88, #585858);
+    gap: 2.5in;
+ 
+  }
+  
+.cot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 90px 10px;
+  padding: 15px;
+  gap: 10px;
+}
+
+#h {
+  font-size: 18px;
+}
+.logo{
+  font-size: 23px;
+  color: rgb(0, 255, 191);
+}
+.note{
+  font-size: 15px;
+}
+table{
+  width: 100%;
+}
+.subject_name{
+  margin-top: 40px;
+}
+ body{
+  width: 100%;
+  height: 100%;
+ }
+}
+
+ 
+.nav-links img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#std{
+  color: rgb(220, 200, 255);
+  
+}
+.new_logo{
+   width: 80px;
+  height: 60px;
+  /* border: 2px solid red; */
+  margin-left: 0.2in;
+}
+#new_logo{
+  height: 80px;
+  width:2in;
+}
+.feedback{
+  display: none;
+   
+  margin-top: 10px;
+border: 2px solid black;
+border-radius: 10px;
+width: 300px;
+height: 380px;
+}
+#feedbackroll , .feedbackbtn ,#feedbacktext{
+  display: block;
+   color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+
+}
+#subbtn{
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+#message{
+   
+  
+  font-weight: bold;
+  margin-left: 10px;
+}
+#btn{
+  background-color: #f44336; /* Red */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 280px;
+}
+/* pdf view */
+#pdf-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease forwards;
+}
+#pdf-content {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  animation: slideUp 0.4s ease forwards;
+}
+#pdf-frame {
+  width: 100%;
+  height: calc(100% - 50px);
+  border: none;
+}
+#close-pdf {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes slideUp {
+  from {transform: translateY(20px);}
+  to {transform: translateY(0);}
+}
+    </style>
+</head>
+<body>
+  <header style="background:linear-gradient(to right,#ffffff,#243836);
+   
+  ">
+ <div class="new_logo">
+  <img src="./images/logo9.png" alt="new_logo" id="new_logo">
+ </div>  
+      <div class="hamburger" id="hamburger">☰</div>
+  
+      <nav>
+        <ul class="nav-links" id="nav-links" onclick="gotoabout()">
+          <li><img src="images/yuvaP.png" alt="Yuvaraj"><span>Yuvaraj Kurri<br><span id="std">Diploma Final Year</span></span></li>
+          <li><img src="images/vivek.jpg" alt="Vivekananda"><span>Vivekananda Kammari<br><span id="std">Diploma Final Year</span></span></li>
+          <li><img src="images/jagdeeshwar.jpg" alt="Jagdeesh"><span>Jagdeeshwar Merugu<br><span id="std">Diploma Final Year</span></span></li>
+          <li><img src="images/rahul.jpg" alt="Rahul"><span>Rahul Belli<br><span id="std">Diploma Second Year</span></span></li>
+          <li><img src="images/shashi.jpg" alt="Shashi"><span>Shashi Nagilla<br><span id="std">Diploma Second Year</span></span></li>
+        </ul>
+      </nav>
+    </div>  
+    </header>
+    <div class="subjects">
+       <div class="subject_name">SUBJECT - <span id="sub_name"></span></div><br>
+        <table>
+            <thead>
+              <tr>
+                <th>Term</th>
+                <th>YouTube</th>
+                <th>Model Paper/ Previous papers</th>
+                <th>Unit's</th>
+                <th style="width: 60%;" id="Projects">Projects</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Term">MID-1</td>
+                <td data-label="Youtube Link"><a id="yt-mid1link" href="#">
+                  <button class="btn">Click Here</button>
+                </a></td>
+                <td>
+                  <a id="mmid1" href="#" download><button class="btn">Download</button></a><br><br>
+                  <button class="btn view-btn" data-file-id="mmid1" id="m1">View</button>
+                </td>             
+                <td>
+                  <a id="cmid1" href="#" download><button class="btn">Download</button></a><br><br>
+                  <button class="btn view-btn" data-file-id="cmid1" id="v1">View</button>
+                </td> 
+                <td>
+                  <a id="project1-link" href="#" download><button class="btn">Download</button></a><br><br>
+                  <button class="btn view-btn" data-file-id="project1-link" id="p1">View</button>
+                </td>             </tr>
+              <tr>
+                <td data-label="Term">MID-2</td>
+                <td data-label="Youtube Link"><a id="yt-mid2link" href="#">
+                  <button class="btn">Click Here</button>
+                </a></td>
+                <td>
+                  <a id="mmid2" href="#" download><button class="btn">Download</button></a><br><br>
+                  <button class="btn view-btn" data-file-id="mmid2" id="m2">View</button>
+                </td>             
+                <td>
+                  <a id="cmid2" href="#" download><button class="btn">Download</button></a><br><br>
+                  <button class="btn view-btn" data-file-id="cmid2" id="v2">View</button>
+                </td> 
+                <td>
+                  <a id="project2-link" href="#" download><button class="btn">Download</button></a><br><br>
+                  <button class="btn view-btn" data-file-id="project2-link" id="p2">View</button>
+                </td> 
+                              </tr>
+              <tr>
+                <td data-label="Term">SEM</td>
+                <td data-label="Youtube Link"><a id="yt-semlink" href="#">
+                  <button class="btn">Click Here</button>
+                </a></td>
+                <td>
+                  <a id="msem" href="#" download><button class="btn">Download</button></a><br><br>
+                  <button class="btn view-btn" data-file-id="msem" id="m3">View</button>
+                </td>             
+                <td>
+                  <a id="csem" href="#" download><button class="btn">Download</button></a><br><br>
+                  <button class="btn view-btn" data-file-id="csem">View</button>
+                </td>               
+                <td>
+                  <a id="project3-link" href="#" download><button class="btn">Download</button></a><br><br>
+                  <button class="btn view-btn" data-file-id="project3-link" id="p3">View</button>
+                </td>   
+                           </tr>
+              
+            </tbody>
+          </table>
+        </div>
+        <div id="pdf-modal">
+          <div id="pdf-content">
+            <iframe id="pdf-frame" src="" frameborder="0"></iframe>
+            <button id="close-pdf" class="btn"  >Close</button>
+          </div>
+        </div>
+        <button id="feedback" class="feedbackbtn">feedback</button>
+        <div class="feedback">
+          <form id="register-form" method="POST">
+            <input type="hidden" name="access_key" value="7464ec1d-5865-4672-9908-ccff357d31e5">
+            <label for="feedback" style="padding-left: 10px;">Feedback:</label><br>
+            <input type="text" id="feedbackroll" name="RollNumber" placeholder="Enter RollNumber" required><br>
+            <textarea id="feedbacktext" name="feedback" rows="4" cols="20" required></textarea><br>
+            <button type="submit" id="subbtn">Submit</button>
+         
+          </form>
+          <p id="message"></p>
+
+          <button id="btn">Close</button>
+        </div>
+        
+        
+        <script src="./script.js">
+        </script>
+</body>
+</html>

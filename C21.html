@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheme C21</title>
+    <link rel="icon" href="images/logo.jpg" type="image/x-jpg">
+
+    <style>
+         * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+        .cont {
+            display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 100%;
+      justify-content: center;
+        }
+        
+    .box {
+      flex: 1 1 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #f9f9f9;
+      transition: transform 0.3s ease;
+    }
+    
+    .box:hover {
+      transform: translateY(-5px);
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    select {
+      padding: 10px;
+      width: 100%;
+      font-size: 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    button {
+      display: flex;
+      flex-direction: row;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #2e8b57;
+      color: white;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #256d45;
+    }
+    header {
+  width: 100%;
+  padding: 15px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 780px) {
+  nav {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #0b52a9;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: none;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+  header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .nav-button button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+ 
+
+#h {
+  font-size: 18px;
+}
+.new_logo {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center;
+  }
+
+  #new_logo {
+    max-width: 80px;
+    height: 60px;
+  }
+ 
+}
+ 
+ 
+select option{
+      cursor: pointer;
+    }
+ 
+.nav-links img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+ 
+#arrow{
+  display: none;
+}
+#h {
+  font-size: 20px;
+  color: #444;
+  font-weight: 600;
+}
+
+ 
+/* color: #17689e; */
+.cot {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  margin: 30px auto;
+  text-align: center;
+  background: linear-gradient(135deg, #e3f2fd, #e0f7fa);
+  border-left: 6px solid #17689e;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.new_logo {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#new_logo {
+  max-width: 100px;
+  height: auto;
+}
+
+.nav-button button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+a{
+  text-decoration: none;
+}
+
+    </style>
+</head>
+<body style="display: flex;flex-direction: column;">
+  <header style="background:linear-gradient(to right,#ffffff,#243836);
+  ">
+      <!-- <h1 class="logo">  <SPAN style="color: linear-gradient(to right, #8e2de2, #4a00e0);  font-style: italic;">LEARNIFY</SPAN></h1> -->
+      <div class="new_logo">
+        <img src="./images/logo9.png" alt="new_logo" id="new_logo">
+      </div> 
+      
+    </header>
+    <p style="font-size: 25px;">Selected Scheme : <span id="scheme"></span></p><br><br>
+    <div class="cont">
+        <div class="box">
+          <form>
+            <label for="year">Select Year</label>
+            <select name="select" id="year">
+            <option value="" disabled selected>Select year</option>
+           
+            <option value="2">II</option>
+            <option value="3">III</option>
+            </select>
+          </form>
+        </div>
+        <div class="box">
+            <form>
+              <label for="year">Select Branch</label>
+              <select name="select" id="branch">
+              <option value="" disabled selected>Select branch</option>
+              <option value="cse">CSE</option>
+              <option value="ece">ECE</option>
+              <option value="mech">MECH</option>
+              <option value="eee">EEE</option>
+              <option value="civil">CIVIL</option>
+              </select>
+            </form>
+          </div>
+        
+        <div class="box" style="justify-content: center;">
+          <button id="btn">Get Report <span id="arrow">➡️</span></button>
+        </div>
+      </div>
+      <script>
+        window.addEventListener("DOMContentLoaded",function(){
+          document.getElementById("scheme").innerHTML=window.localStorage.getItem("scheme");
+        });
+        document.getElementById('btn').addEventListener('click', function(){
+            var year = document.getElementById('year').value;
+            var branch = document.getElementById('branch').value;
+            localStorage.setItem("branch", branch);
+            localStorage.setItem("year", year);
+            // Perform AJAX request to fetch report based on selected year and branch
+            // Replace the following code with your AJAX implementation
+            // console.log('Fetching report for year:', year, 'and branch:', branch);
+            //eee
+            if(branch=="eee")
+            {
+                  if(year ==2 && branch){
+                    // window.location=`EEE/C21_${year}${branch}.html`;
+                    alert("Resources for this Branch is not availble");
+
+                }
+              else if (year==3 && branch) {
+                    // window.location=`EEE/C21_${year}${branch}.html`;
+                    alert("Resources for this Branch is not availble");
+
+                }
+                else{
+                    alert("Invalid Selection");
+                }
+            }
+            //cse
+            else  if(branch=="cse")
+            {
+                  if(year ==2 && branch){
+                    window.location=`CSE/C21_${year}${branch}.html`;
+                }
+              else if (year==3 && branch) {
+                    window.location=`CSE/C21_${year}${branch}.html`;
+                }
+                else{
+                    alert("Invalid Selection");
+                }
+            }
+            //ece
+            else  if(branch=="ece")
+            {
+                if(year ==2 && branch){
+                  // window.location=`ECE/C21_${year}${branch}.html`;
+                  alert("Resources for this Branch is not availble");
+              }
+            else if (year==3 && branch) {
+                  // window.location=`ECE/C21_${year}${branch}.html`;
+                  alert("Resources for this Branch is not availble");
+
+              }
+              else{
+                  alert("Invalid Selection");
+              }
+            }
+            //civil
+            else  if(branch=="civil")
+            {
+                if(year ==2 && branch){
+                  // window.location=`CIVIL/C21_${year}${branch}.html`;
+                  alert("Resources for this Branch is not availble");
+
+              }
+            else if (year==3 && branch) {
+                  // window.location=`CIVIL/C21_${year}${branch}.html`;
+                  alert("Resources for this Branch is not availble");
+
+              }
+              else{
+                  alert("Invalid Selection");
+              }
+            }
+            //mechanical
+            else  if(branch=="mech")
+            {
+                if(year ==2 && branch){
+                  // window.location=`MECHANICAL/C21_${year}${branch}.html`;
+                  alert("Resources for this Branch is not availble");
+
+              }
+            else if (year==3 && branch) {
+                  window.location=`MECHANICAL/C21_${year}${branch}.html`;
+              }
+              else{
+                  alert("Invalid Selection");
+              }
+            }
+        });
+        document.getElementById("btn").addEventListener("mouseenter", function() {
+    document.getElementById("arrow").style.display = "block";
+});
+
+document.getElementById("btn").addEventListener("mouseleave", function() {
+    document.getElementById("arrow").style.display = "none";
+});
+        </script> 
+</body>
+</html>

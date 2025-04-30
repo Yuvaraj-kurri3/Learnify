@@ -1,0 +1,77 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    /* background: linear-gradient(to right, #ff9966, #ff5e62); */
+    /* background-image: url("/images/logo.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.login-container {
+    background:linear-gradient(to right,#fdfdfd,#5f6b6a);        padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(90, 0, 0, 0.2);
+    width: 320px;
+    text-align: center;
+}
+h2 {
+    color: black;
+    margin-bottom: 15px;
+}
+input, select {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+button{
+    width: 50%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+input:focus, select:focus {
+    border-color: #ff5e62;
+    outline: none;
+}
+button {
+    background-color: #ff5e62;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover {
+    background-color: #e04e50;
+}
+label{
+    text-align: left;
+}
+#logo_png{
+    width: 150px;
+    height: 100px;
+}
+@media (max-width: 768px) {
+     body{
+        background-size: cover;
+      }
+   
+  }
+#label1 {
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-right: 2.6in;
+}
+#label2{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-right: 2.1in;  
+}
