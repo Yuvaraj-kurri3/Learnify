@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C21_2_cse</title>
+    <link rel="icon" href="../images/logo.jpg" type="image/x-jpg">
+
+    <style>
+         * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+        .cont {
+            display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 100%;
+      justify-content: center;
+        }
+        
+    .box {
+      flex: 1 1 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #f9f9f9;
+      transition: transform 0.3s ease;
+    }
+    
+    .box:hover {
+      transform: translateY(-5px);
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    select {
+      padding: 10px;
+      width: 100%;
+      font-size: 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    button {
+      display: flex;
+      flex-direction: row;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #2e8b57;
+      color: white;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #256d45;
+    }
+    p{
+       
+      font-size: 32px;
+    }
+    header {
+  width: 100%;
+  padding: 15px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  gap: 3.7in;
+}
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #8e2de2, #4a00e0); 
+  padding: 10px 20px;
+}
+
+ 
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 0px;
+ 
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+ 
+
+.nav-links li{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  animation: fadeSlideUp 0.8s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 3;
+    transform: translateY(0);
+  }
+  
+}
+.nav-links li span:hover {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+.nav-links li:hover {
+  background-color: rgba(255, 255, 255, 0.2);}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+.nav-names{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 10px;
+  list-style: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  nav {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #0b52a9;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: none;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+  .new_logo {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center;
+  }
+
+  #new_logo {
+    max-width: 80px;
+    height: 50px;
+  }
+  nav.active {
+    display: block;
+    background:linear-gradient(to right,#607a78, #458ca7);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links li {
+    width: 100%;
+    height: 60px;
+    justify-content: flex-start;
+    color: white;
+  }
+
+  .nav-links img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-links span {
+    font-size: 14px;
+  }
+  header{
+    background:linear-gradient(to right,#768a88, #585858);
+    gap: 3.2in;
+ 
+  }
+ 
+
+#h {
+  font-size: 18px;
+}
+.logo{
+  font-size: 23px;
+  color: rgb(0, 255, 191);
+}
+#new_logo{
+  margin-right: 2in;
+ }
+ 
+ 
+}
+.nav-links img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#std{
+  color: rgb(220, 200, 255);
+  
+}
+#arrow{
+  display: none;
+}
+#h {
+  font-size: 20px;
+  color: #444;
+  font-weight: 600;
+}
+
+#Growth, #dream {
+  color: #17689e;
+  font-weight: bold;
+  font-style: italic;
+}
+/* color: #17689e; */
+.cot {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  margin: 30px auto;
+  text-align: center;
+  background: linear-gradient(135deg, #e3f2fd, #e0f7fa);
+  border-left: 6px solid #17689e;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.new_logo{
+   width: 80px;
+  height: 60px;
+  /* border: 2px solid red; */
+  margin-left: 7in;
+}
+#new_logo{
+  height: 80px;
+  width:2in;
+}
+
+    
+    </style>
+</head>
+<body style="display: flex;flex-direction: column;gap: 10px;">
+  <header style="background:linear-gradient(to right,#ffffff,#243836);
+  ">
+      <!-- <h1 class="logo">  <SPAN style="color: linear-gradient(to right, #8e2de2, #4a00e0);  font-style: italic;">LEARNIFY</SPAN></h1> -->
+       <div class="new_logo">
+        <img src="../images/logo9.png" alt="new_logo" id="new_logo">
+       </div>
+  
+      <div class="hamburger" id="hamburger">☰</div>
+  
+      <nav>
+        <ul class="nav-links" id="nav-links">
+         
+        </ul>
+      </nav>
+    </div>  
+    </header>
+  <p style="font-size: 24px;"> Branch : <span id="display_branch"></span></p><br>
+    <div class="cont" style="display: flex; flex-direction: row;">
+       
+        <div class="box">
+          <form>
+            <label for="sem">Select sem</label>
+            <select name="select" id="sem">
+            <option value="" disabled selected>Select Sem</option>
+           
+            <option value="3">III</option>
+            <option value="4">IV</option>
+            </select>
+          </form>
+        </div>
+       
+        
+        <div class="box" style="justify-content: center;">
+          <button id="btn">Get Report <span id="arrow">➡️</span></button>
+        </div>
+      </div>
+      <script>
+        
+            window.addEventListener("DOMContentLoaded", function () {
+              const year=localStorage.getItem("year");
+              const branch = localStorage.getItem("branch");
+              document.getElementById("display_branch").innerHTML=branch.toUpperCase();
+              if(year==2){
+                document.getElementById("year").innerHTML="II";
+              }
+              else{
+                document.getElementById("year").innerHTML="III";
+              }
+            
+            });
+        document.getElementById('btn').addEventListener('click', function() {
+            var sem = document.getElementById('sem').value;
+            localStorage.setItem("sem",sem);
+            if(sem){
+              window.location.href =`C21_${sem}_cse_sem.html`;
+            }
+            else{
+              alert("please select sem!");
+            }
+          //  window.location.href="C21_3_cse_sem.html";
+        });
+        document.getElementById("btn").addEventListener("mouseenter", function() {
+    document.getElementById("arrow").style.display = "block";
+});
+
+document.getElementById("btn").addEventListener("mouseleave", function() {
+    document.getElementById("arrow").style.display = "none";
+});
+document.getElementById('hamburger').addEventListener('click', function () {
+    document.getElementById('nav-links').classList.toggle('active');
+  });
+
+   
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.querySelector("nav");
+
+  hamburger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+      </script>
+</body>
+</html>

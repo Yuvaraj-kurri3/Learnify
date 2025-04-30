@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C21 3 Sem</title>
+    <link rel="icon" href="../images/logo.jpg" type="image/x-jpg">
+
+    <style>
+                 * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+        .cont {
+            display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 100%;
+      justify-content: center;
+        }
+        
+    .box {
+      flex: 1 1 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #f9f9f9;
+      transition: transform 0.3s ease;
+    }
+    
+    .box:hover {
+      transform: translateY(-5px);
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    select {
+      padding: 10px;
+      width: 100%;
+      font-size: 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #2e8b57;
+      color: white;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+      display: flex;
+      flex-direction: row;
+    }
+
+    button:hover {
+      background-color: #256d45;
+    }
+    p{
+       font-family: 'Times New Roman', Times, serif;
+      font-size: 32px;
+    }
+    #display_branch{
+      color: rgb(50, 133, 108);
+    }
+    header {
+  width: 100%;
+  padding: 15px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  gap: 3.7in;
+}
+
+ 
+ 
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  nav {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #0b52a9;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: none;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
+  
+  header{
+    background:linear-gradient(to right,#768a88, #1b3392);
+    gap: 3.2in;
+ 
+  }
+  
+
+#h {
+  font-size: 18px;
+}
+.logo{
+  font-size: 23px;
+  color: rgb(0, 255, 191);
+}
+.new_logo {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center;
+  }
+
+  #new_logo {
+    max-width: 80px;
+    height: 60px;
+  }
+ 
+}
+
+ 
+ 
+#std{
+  color: rgb(220, 200, 255);
+  
+}
+#arrow{
+  display: none;
+}
+select option{
+      cursor: pointer;
+    }
+/* color: #17689e; */
+.cot {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  margin: 30px auto;
+  text-align: center;
+  background: linear-gradient(135deg, #e3f2fd, #e0f7fa);
+  border-left: 6px solid #17689e;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.new_logo {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#new_logo {
+  max-width: 100px;
+  height: auto;
+}
+    </style>
+</head>
+<body style="display: flex;flex-direction: column;gap: 10px;">
+  <header style="background:linear-gradient(to right,#ffffff,#243836);
+  ">
+      <!-- <h1 class="logo">  <SPAN style="color: linear-gradient(to right, #8e2de2, #4a00e0);  font-style: italic;">LEARNIFY</SPAN></h1> -->
+       <div class="new_logo">
+        <img src="../images/logo9.png" alt="new_logo" id="new_logo" >
+       </div> 
+    </header>
+  <p>Branch:<span id="display_branch"></span></p><br>
+  <div class="cont">
+        <div class="box">
+          <form>
+            <label for="sem">Select sem</label>
+            <select name="select" id="sem">
+            <option value="" disabled selected>Select Sem</option>
+           
+            <option value="5">V</option>
+            <option value="6">VI</option>
+            </select>
+          </form>
+        </div>
+       
+        
+        <div class="box" style="justify-content: center;">
+          <button id="btn">Get Report <span id="arrow">➡️</span></button>
+        </div>
+        
+      </div>
+      <!-- <a href="./C21_3cse.html"><button style="color: white; border-radius: 10px;font-size: 10px;width: 90px; height: auto; font-size: 25px;cursor: pointer;padding: 10px;">Back</button></a> -->
+
+      <script>
+         window.addEventListener("DOMContentLoaded", function () {
+              const branch = localStorage.getItem("branch");
+              document.getElementById("display_branch").innerHTML=branch.toUpperCase();
+            });
+        document.getElementById('btn').addEventListener('click', function() {
+            var sem = document.getElementById('sem').value;
+         if(sem){
+          localStorage.setItem("sem",sem);
+            if(sem==6){
+                alert("Industrial Training! There is no resources for Industrail Training Right Now!")
+            }
+            else{
+            window.location.href =`C21_${sem}_cse_sem.html`;}
+          //  window.location.href="C21_3_sem.html";
+        }
+        else{
+            alert("Please select a sem!");
+        }
+      });
+      
+        document.getElementById("btn").addEventListener("mouseenter", function() {
+    document.getElementById("arrow").style.display = "block";
+});
+
+document.getElementById("btn").addEventListener("mouseleave", function() {
+    document.getElementById("arrow").style.display = "none";
+});
+      </script>
+</body>
+</html>
