@@ -299,7 +299,7 @@ document.getElementById("python")?.addEventListener("click", function () {
          // Chapter pdf's
          { id: "cmid1", name: "MID-1 Notes", file: "Learnify_OS_5unit.pdf", downloadName: "Learnify_net_mid1_u1&2.pdf" },
          { id: "cmid2", name: "MID-2 Notes", file: "Learnify_WD_3rd&4rth.pdf", downloadName: "Learnify_WD_3rd&4rth.pdf" },
-         { id: "csem",  name: "SEM Notes",   file: "Learnify_WD_5&6th_units.pdf", downloadName: "Learnify_WD_sem_u5&6.pdf" },
+         { id: "csem",  name: "SEM Notes",   file: "Learnify_WD_5&6th_units.pdf", downloadName: "Learnify_WD_5&6th_units.pdf" },
          // youtube links:
          {id:"yt-mid1link", name:"mid2-link",link:"https://youtu.be/lGKGDxwvrEQ?si=-dE4_UwnK-MPZI6C"},
          {id:"yt-mid2link", name:"mid2-link",link:"https://youtu.be/hxbWGFI4xI4?si=bk94E3y_vuaay0ze"},
