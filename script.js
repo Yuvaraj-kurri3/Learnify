@@ -81,7 +81,7 @@ document.getElementById("python")?.addEventListener("click", function () {
   });
   document.getElementById("dcdvhdl")?.addEventListener("click", function () {
     localStorage.setItem("selectedSubject", "DCDVHDL");
-    alert("as of now for this subject resources not availble. we will add soon !  ");
+    alert("as of now for this subject resources not availble. we will add soon   ");
     //  window.location.href = "../Resources.html";
   });
   //ec end
